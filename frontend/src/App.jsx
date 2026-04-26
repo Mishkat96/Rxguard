@@ -331,7 +331,7 @@ export default function App() {
     const file = e.target.files[0]
     if (!file) return
     navigate(S.EXTRACTING)
-    setExtractSteps([{ message: 'Reading your prescription with Claude Opus...', done: false }])
+    setExtractSteps([{ message: 'Reading your prescription with Claude Opus 4.7...', done: false }])
 
     const form = new FormData()
     form.append('file', file)
@@ -347,7 +347,7 @@ export default function App() {
       const hasLowConf = found.some(d => Object.values(d.confidence || {}).some(c => c < 0.7))
 
       setExtractSteps([
-        { message: 'Reading your prescription with Claude Opus...', done: true },
+        { message: 'Reading your prescription with Claude Opus 4.7...', done: true },
         {
           message: `Found ${found.length} medicine${found.length !== 1 ? 's' : ''}: ${found.map(d => [d.brand_name, d.strength].filter(Boolean).join(' ')).join(', ')}`,
           done: true

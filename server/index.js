@@ -340,7 +340,7 @@ app.post('/api/check-stream', async (req, res) => {
 
     // Stage 4b: Claude reasoning
     if (clientGone) { clearTimeout(hardTimeout); return finish() }
-    sseWrite(res, 'progress', { step: 4, total: 4, message: 'Running AI safety analysis with Claude Opus...' })
+    sseWrite(res, 'progress', { step: 4, total: 4, message: 'Running AI safety analysis with Claude Opus 4.7...' })
     const userMsg = buildCheckPrompt(generics, patient, openfdaData, nlmResults, trulyUnverified, session_id)
 
     const claudeRes = await client.messages.create({
